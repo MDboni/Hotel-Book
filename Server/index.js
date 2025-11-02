@@ -9,6 +9,7 @@ import hotelRouter from './router/hotelRoutes.js';
 import connectCloudinary from './config/cloudinary.js';
 import roomRouter from './router/roomRoutes.js';
 import bookingRouter from './router/bookingRoutes.js';
+import { stripeWebhooks } from './controller/stripeWebhooks.js';
 
 
 dotenv.config();
@@ -18,6 +19,8 @@ const port = 5000;
 
 // Middleware ......................
 app.use(cors())
+app.post('/api/stripe', express.raw({type:'application/json'}),stripeWebhooks)
+
 app.use(express.json())
 app.use(clerkMiddleware())
 

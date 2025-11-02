@@ -19,7 +19,11 @@ const port = 5000;
 
 // Middleware ......................
 app.use(cors())
-app.post('/api/stripe', express.raw({type:'application/json'}),stripeWebhooks)
+app.post(
+  '/api/stripe',
+  express.raw({ type: 'application/json' }),
+  stripeWebhooks
+);
 
 app.use(express.json())
 app.use(clerkMiddleware())

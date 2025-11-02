@@ -38,8 +38,7 @@ const MyBookings = () => {
           Authorization: `Bearer ${await getToken()}`
         }
       }
-    );
-
+    );    
     if (data.success) {
       window.location.href = data.url; 
       return;

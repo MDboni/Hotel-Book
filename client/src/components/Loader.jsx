@@ -10,7 +10,7 @@ const Loader = () => {
     if (nextUrl) {
       const timer = setTimeout(() => {
         navigate(`/${nextUrl}`);
-      }, 8000);
+      }, 2000);
 
       // ✅ Cleanup (যদি কম্পোনেন্ট unmount হয়)
       return () => clearTimeout(timer);
@@ -25,3 +25,4 @@ const Loader = () => {
 };
 
 export default Loader;
+
